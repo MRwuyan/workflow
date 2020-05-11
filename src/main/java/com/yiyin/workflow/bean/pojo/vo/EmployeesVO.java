@@ -1,95 +1,78 @@
-package com.yiyin.workflow.entity;
+package com.yiyin.workflow.bean.pojo.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
-/**
- * <p>
- * 员工表
- * </p>
- *
- * @author chenxiaopeng
- * @since 2020-05-02
- */
+import java.time.LocalDateTime;
+
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-public class Employees implements Serializable {
+public class EmployeesVO {
 
-    private static final long serialVersionUID = 1L;
-
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
-
+    @ApiModelProperty("用户名")
     private String name;
-
-    /**
-     * 用户密码
-     */
-    private String password;
-
     /**
      * 手机号
      */
+    @ApiModelProperty("手机号")
     private String phone;
 
     /**
      * 邮箱
      */
+    @ApiModelProperty("邮箱")
     private String email;
 
     /**
      * 头像url
      */
+    @ApiModelProperty("头像url")
     private String icon;
 
     /**
      * 部门id
 
      */
-    private Long departmentId;
+    @ApiModelProperty("部门名称")
+    private Long departmentName;
 
     /**
      * 创建时间
      */
+    @ApiModelProperty("创建时间")
     private LocalDateTime createTime;
 
     /**
      * 最后登录时间
      */
+    @ApiModelProperty("最后登录时间")
     private LocalDateTime lastLoginTime;
 
     /**
      * 登录地点
      */
+    @ApiModelProperty("登录地点")
     private String loginAddress;
 
     /**
      * 登录ip
      */
+    @ApiModelProperty("登录ip")
     private String loginIp;
 
     /**
      * 状态:1.在职.2离职
      */
+    @ApiModelProperty("状态:1.在职.2离职")
     private Integer status;
     /**
      *  性别:1.男,2.女
      */
+    @ApiModelProperty("性别:1.男,2.女")
     private Integer sex;
 
     /**
      * 出生年月日
      */
+    @ApiModelProperty("出生年月日")
     private LocalDateTime birthday;
-
-    /**
-     * 盐
-     */
-    private String salt;
 }

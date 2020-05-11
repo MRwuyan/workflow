@@ -8,7 +8,13 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Data
-public class RegisteredDTO {
+public class EmplUpdateDTO {
+
+
+    @NotNull
+    @ApiModelProperty("id")
+    private Long id;
+
     @NotEmpty
     @ApiModelProperty("名称")
     private String name;
@@ -16,8 +22,8 @@ public class RegisteredDTO {
     /**
      * 用户密码
      */
-    @NotEmpty
-    @ApiModelProperty("用户密码")
+
+    @ApiModelProperty("密码")
     private String password;
 
     /**
@@ -40,12 +46,35 @@ public class RegisteredDTO {
     @NotEmpty
     @ApiModelProperty("头像url")
     private String icon;
+
     /**
      * 部门id
      */
     @NotNull
     @ApiModelProperty("部门id")
     private Long departmentId;
+
+
+
+    /**
+     * 状态:1.在职.2离职
+     */
+    @NotNull
+    @ApiModelProperty("状态:1.在职.2离职")
+    private Integer status;
+    /**
+     *  性别:1.男,2.女
+     */
+    @NotNull
+    @ApiModelProperty("性别:1.男,2.女")
+    private Integer sex;
+
+    /**
+     * 出生年月日
+     */
+    @NotNull
+    @ApiModelProperty("出生年月日")
+    private LocalDateTime birthday;
 
 
 
