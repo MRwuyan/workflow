@@ -7,6 +7,8 @@ import com.yiyin.workflow.constant.BizCode;
 import com.yiyin.workflow.entity.Employees;
 import com.yiyin.workflow.service.EmployeesService;
 import com.yiyin.workflow.utils.IPLocationUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.DisabledAccountException;
@@ -27,6 +29,7 @@ import java.time.LocalDateTime;
 
 @Slf4j
 @RestController
+@Api( tags = "用户登录接口处理")
 @RequestMapping(value = ApiPrefixConstant.V1 + "/open")
 public class OpenController {
 
@@ -40,6 +43,7 @@ public class OpenController {
      * post表单提交，登录
      * @return
      */
+    @ApiOperation(value = "登录")
     @PostMapping("/login")
     public JsonResult login(@RequestBody @Valid LoginDTO dto,HttpServletRequest request) {
         @NotEmpty(message = "用户名不能为空") String username = dto.getUsername();
@@ -75,6 +79,7 @@ public class OpenController {
      *
      * @return
      */
+    @ApiOperation(value = "注销")
     @PostMapping("/logout")
     public JsonResult logout() {
         SecurityUtils.getSubject().logout();
@@ -86,6 +91,7 @@ public class OpenController {
      *
      * @return
      */
+    @ApiOperation(value = "注册（暂时没用，手动添加用户）")
     public JsonResult registered() {
         return JsonResult.createSuccess();
     }
