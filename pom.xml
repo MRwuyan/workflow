@@ -55,9 +55,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba</groupId>executable
+            <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.58</version>
+            <version>1.2.9</version>
         </dependency>
 
 
@@ -134,8 +134,8 @@
         </dependencies>
     </dependencyManagement>
     <build>
-<!--        springboot 打包会有两个包，一个只有源码包。一个是包含第三方依赖的包。就是通过repackage把源码包和第三方包打在一起。
-         看看spring-boot-loader这个依赖的代码-->
+        <!--        springboot 打包会有两个包，一个只有源码包。一个是包含第三方依赖的包。就是通过repackage把源码包和第三方包打在一起。
+        你可以看看spring-boot-loader这个依赖的代码-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -4,7 +4,6 @@ server:
 spring:
   datasource:
     druid:
-
       url: jdbc:mysql://127.0.0.1:3306/workflow?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
       username: root
       password: mysqltest
